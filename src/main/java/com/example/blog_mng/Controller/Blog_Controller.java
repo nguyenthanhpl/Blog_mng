@@ -27,7 +27,7 @@ public class Blog_Controller {
     @GetMapping("/add-blog")
     public String addBlog(Blog blog, Model model) {
         model.addAttribute("blog", new Blog());
-        return "add-blog";
+        return "add_blog";
     }
 
     @PostMapping("/add-blog")
@@ -49,7 +49,7 @@ public class Blog_Controller {
     public String editBlog( @ModelAttribute("blog") long id, Blog blog, BindingResult result, Model model) {
         if (result.hasErrors()) {
             model.addAttribute("blog",blog);
-            return "edit_blog";
+            return "edit-blog";
         }
         blogService.update(blog.getID(),blog);
         return "redirect:/index";
