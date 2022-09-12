@@ -33,7 +33,7 @@ public class Blog_Controller {
     @PostMapping("/add-blog")
     public String addBlog(Blog blog, BindingResult result, Model model) {
         if (result.hasErrors()) {
-            return "add-blog";
+            return "add_blog";
         }
         blogService.add(blog);
         return "redirect:/";
