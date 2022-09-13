@@ -9,13 +9,16 @@
     <table class="table mt-4">
         <thead>
         <tr>
-            <th>STT</th>
             <th>Title</th>
             <th>Cover</th>
             <th>Content</th>
+            <th>category</th>
+            <th>Edit</th>
+            <th>Delete</th>
             <th></th>
         </tr>
         </thead>
+
         <tbody>
         <div th:if="${!blogs.isEmpty()}">
             <tr th:each="blog, iterStat : ${blogs}">

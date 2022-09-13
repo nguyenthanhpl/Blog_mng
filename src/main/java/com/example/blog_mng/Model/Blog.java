@@ -19,9 +19,11 @@ public class Blog {
         this.cover = cover;
         this.content = content;
     }
+    @ManyToOne
+    @JoinColumn(name = "category_id")
+    private Category category;
 
-    public Blog() {
-    }
+    public Blog() {}
 
     public Long getID() {
         return ID;
@@ -53,5 +55,13 @@ public class Blog {
 
     public void setContent(String content) {
         this.content = content;
+    }
+
+    public Category getCategory() {
+        return category;
+    }
+
+    public void setCategory(Category category) {
+        this.category = category;
     }
 }
